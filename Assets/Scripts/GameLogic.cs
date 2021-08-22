@@ -26,17 +26,25 @@ public class GameLogic : MonoBehaviour
     }
 
     //Creating a function to handle the click button event
-    public void OnButtonClick() {
+    public void OnButtonClick() 
+    {
 
         string userInputValue = userInput.text;
         int answer = int.Parse(userInputValue);
 
-        answer *= 2;
+        if (answer == randomNum)
+        {
+            Debug.Log("Correct");
+        }
+        else
+        {
+            Debug.Log("Wrong");
+        }
 
         //Debug.Log("Button clicked");
-        Debug.Log("Value of Input: " + userInput.text);
-        Debug.Log("The valor of randoNum: " + randomNum);
-        Debug.Log("Value of answer: " + answer);
+        //Debug.Log("Value of Input: " + userInput.text);
+        //Debug.Log("The valor of randoNum: " + randomNum);
+        //Debug.Log("Value of answer: " + answer);
 
     }
 
