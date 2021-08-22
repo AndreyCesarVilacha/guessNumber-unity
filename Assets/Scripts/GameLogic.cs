@@ -8,23 +8,22 @@ public class GameLogic : MonoBehaviour
 
     public InputField userInput;
     public Text textUI;
+    public Button buttonUi;
+
+    public int minNumber;
+    public int maxNumber;
 
     //Declaring a variable
     //Private is an access modifier - makes this variable only
     //accessible from this script
     private int randomNum;
+    private bool isGameWon = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        randomNum = 10;
-        textUI.text = "";
-    }
+        ResetGame();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Creating a function to handle the click button event
@@ -39,6 +38,9 @@ public class GameLogic : MonoBehaviour
             if (answer == randomNum)
             {
                 textUI.text = "Correct";
+                isGameWon = true;
+                ResetGame();
+                //buttonUi.interactable = false;
             }
             else if (answer > randomNum)
             {
@@ -61,6 +63,31 @@ public class GameLogic : MonoBehaviour
         //Debug.Log("The valor of randoNum: " + randomNum);
         //Debug.Log("Value of answer: " + answer);
 
+    }
+
+    //Function responsible for return a random number
+    private int GetRandoNumber(int min, int max)
+    {
+        int random = Random.Range(min, max);
+
+        return random;
+    }
+
+    private void ResetGame()
+    {
+        if (isGameWon)
+        {
+            textUI.text = "You Won!";
+            isGameWon = false;
+        }
+        else
+        {
+            textUI.text = "Guess a number between " + minNumber + " and " + (maxNumber-);
+            userInput.text = "";
+            randomNum = GetRandoNumber(minNumber, maxNumber);
+        }
+        
+        
     }
 
 }

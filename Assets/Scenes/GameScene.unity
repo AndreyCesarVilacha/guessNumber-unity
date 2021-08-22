@@ -1013,6 +1013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userInput: {fileID: 112764914}
   textUI: {fileID: 2026255376}
+  buttonUi: {fileID: 705459782}
+  minNumber: 15
+  maxNumber: 25
 --- !u!4 &1948032162
 Transform:
   m_ObjectHideFlags: 0
