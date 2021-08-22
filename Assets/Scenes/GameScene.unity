@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userInput: {fileID: 112764914}
+  textUI: {fileID: 2026255376}
 --- !u!4 &1948032162
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,7 +1039,7 @@ GameObject:
   - component: {fileID: 2026255377}
   - component: {fileID: 2026255376}
   m_Layer: 5
-  m_Name: Text
+  m_Name: textUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

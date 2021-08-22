@@ -7,6 +7,7 @@ public class GameLogic : MonoBehaviour
 {
 
     public InputField userInput;
+    public Text textUI;
 
     //Declaring a variable
     //Private is an access modifier - makes this variable only
@@ -17,6 +18,7 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         randomNum = 10;
+        textUI.text = "";
     }
 
     // Update is called once per frame
@@ -30,16 +32,29 @@ public class GameLogic : MonoBehaviour
     {
 
         string userInputValue = userInput.text;
-        int answer = int.Parse(userInputValue);
-
-        if (answer == randomNum)
+        if(userInputValue != "")
         {
-            Debug.Log("Correct");
+            int answer = int.Parse(userInputValue);
+
+            if (answer == randomNum)
+            {
+                textUI.text = "Correct";
+            }
+            else if (answer > randomNum)
+            {
+                textUI.text = "Try lower!";
+            }
+            else
+            {
+                textUI.text = "Try Higher";
+            }
         }
         else
         {
-            Debug.Log("Wrong");
+            textUI.text = "Please enter with a number";
         }
+
+        
 
         //Debug.Log("Button clicked");
         //Debug.Log("Value of Input: " + userInput.text);
